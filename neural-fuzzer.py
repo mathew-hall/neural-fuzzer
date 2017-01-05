@@ -274,7 +274,11 @@ if __name__ == "__main__":
         print('Iteration', iteration)
         model.fit(X, y, batch_size=128, nb_epoch=1)
         print('\n')
+        
+        model.save_weights(file_model, overwrite=True)
+        
         # validation
+        
 
         if os.path.exists(test_dir):
             shutil.rmtree(test_dir)
@@ -301,7 +305,7 @@ if __name__ == "__main__":
                 print("Saving weights for",c)
                 filename = str(index)+"-"+file_model
                 pickle.dump((char_indices, indices_char), open(filename+".map","w+"))
-                model.save_weights(filename, overwrite=True)
+                
                 print("Done!")
 
         #results = triage(cmd, "test")
