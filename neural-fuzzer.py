@@ -289,7 +289,7 @@ if __name__ == "__main__":
                 else:
                     start_index = random.randint(0, max_rand)
 
-                filename = "test/gen-"+str(rep)+"-"+str(iteration)+"-"+str(diversity)
+                filename = test_dir + "/gen-"+str(rep)+"-"+str(iteration)+"-"+str(diversity)
                 recall(model, char_indices, indices_char, valid_text[start_index: start_index + maxlen], "test", filename, maxlen, maxgenlen)
 
 
