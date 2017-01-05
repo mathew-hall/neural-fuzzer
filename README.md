@@ -71,4 +71,8 @@ Testing and triage of crashes using GDB can be performed using neural-fuzzer. Fo
 
 ### Training
 
-TODO
+To train a model, collect a corpus of files in a directory. Run the fuzzer in training mode as follows:
+
+    $  ./neural-fuzzer.py --max-gen-size 64 model_weights.h5 train/
+
+This will train a model on the corpus with a total of 50 epochs. After each epoch, samples from the model will be generated and saved in a randomly named directory (`gen-XXXXXXXX`).
