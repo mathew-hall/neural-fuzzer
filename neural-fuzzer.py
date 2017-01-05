@@ -71,7 +71,7 @@ def recall(model, char_indices, indices_char, data, testdirs, filename, maxlen, 
       f.append(fop)
       f[b].write(data)
       f[b].flush()
-
+      x = ""
       if len(data) < maxlen:
          x = "".join(map(chr, list(np.random.random_integers(0,255,maxlen-len(data)))  )) + data
 
